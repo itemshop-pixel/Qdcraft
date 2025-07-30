@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QDCraf - Sklep internetowy</title>
+<style>
+  /* Reset i podstawy */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #121212;
+    color: #eee;
+  }
+  a {
+    color: #0ff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  a:hover {
+    color: #00ffffcc;
+  }
+
+  header {
+    background: #1a1a1a;
+    padding: 20px 10px;
+    box-shadow: 0 0 15px #0ff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+  }
+  nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  nav a {
+    font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #0ff;
+    left: 0; bottom: -5px;
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px 50px;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    border-bottom: 2px solid #0ff;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #0ff99;
+  }
+
+  /* Sklep - produkty */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .product-card {
+    background: #222;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 10px #0ff5;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0ff;
+  }
+  .product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  .product-card h3 {
+    margin: 0 0 8px;
+    color: #0ff;
+  }
+  .product-card p {
+    font-size: 0.9em;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+  .price {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #0ff;
+  }
+  .btn-buy {
+    display: inline-block;
+    background: #0ff;
+    color: #121212;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px #0ff;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+  .btn-buy:hover {
+    background: #00ffffcc;
+    box-shadow: 0 0 20px #0ff;
+  }
+
+  /* Regulamin */
+  .rules {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0ff5;
+    color: #ccc;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    background: #1a1a1a;
+    color: #0ff;
+    font-size: 0.9em;
+    box-shadow: inset 0 0 10px #0ff;
+  }
+
+  /* Responsywność */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2em;
+    }
+    nav {
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    main {
+      margin: 20px 10px 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>QDCraf</h1>
+  <nav>
+    <a href="#home">Strona główna</a>
+    <a href="#shop">Sklep</a>
+    <a href="#rules">Regulamin</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="home">
+    <h2>Witamy w QDCraf!</h2>
+    <p>Twój najlepszy sklep z unikalnymi produktami craftowymi. Znajdź coś wyjątkowego i zrób zakupy online z łatwością.</p>
+  </section>
+
+  <section id="shop">
+    <h2>Sklep</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x150?text=Produkt+1" alt="Produkt 1" />
+        <h3>Zestaw Kreatywny</h3>
+        <p>Wszystko, czego potrzebujesz, by zacząć swoją przygodę z rękodziełem.</p>
+        <div class="price">79,99 zł</div>
+        <a href="#" class="btn-buy">Kup teraz</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x150?text=Produkt+2" alt="Produkt 2" />
+        <h3>Farby Akrylowe</h3>
+        <p>Kolorowe farby akrylowe w zestawie 12 sztuk.</p>
+        <div class="price">39,99 zł</div>
+        <a href="#" class="btn-buy">Kup teraz</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x150?text=Produkt+3" alt="Produkt 3" />
+        <h3>Zestaw Pędzli</h3>
+        <p>Profesjonalne pędzle do malowania różnych powierzchni.</p>
+        <div class="price">49,99 zł</div>
+        <a href="#" class="btn-buy">Kup teraz</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <h2>Regulamin sklepu</h2>
+    <div class="rules">
+      <p><strong>1. Zamówienia i płatności:</strong> Zamówienia można składać przez stronę internetową. Akceptujemy płatności kartą, przelewem oraz systemami płatności online.</p>
+      <p><strong>2. Dostawa:</strong> Dostawa realizowana jest w ciągu 3-7 dni roboczych na terenie Polski.</p>
+      <p><strong>3. Zwroty i reklamacje:</strong> Klient ma prawo do zwrotu towaru w ciągu 14 dni od otrzymania przesyłki bez podania przyczyny.</p>
+      <p><strong>4. Dane osobowe:</strong> Dane klientów są przetwarzane zgodnie z polityką prywatności i nie są udostępniane osobom trzecim.</p>
+      <p><strong>5. Kontakt:</strong> W przypadku pytań prosimy o kontakt pod adresem: kontakt@qdcraf.pl.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 QDCraf - Wszystkie prawa zastrzeżone
+</footer>
+
+</body>
+</html>
